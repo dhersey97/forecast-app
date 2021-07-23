@@ -7,7 +7,7 @@ const containerStyles = {
     maxWidth: 700,
 };
 
-export const LocationSearch = () => {
+export const LocationSearch = ({ searchfield, searchChange }) => {
     return (
         <div className="center">
             <Input 
@@ -16,6 +16,7 @@ export const LocationSearch = () => {
                 placeholder="Search Location"
                 style={containerStyles}
                 className="rainbow-m-verticle_x-large rainbow-p-horizontal_medium rainbow-m_auto"
+                onChange = {searchChange}
             />
         </div>
     );
