@@ -14,7 +14,7 @@ class App extends Component{
 	constructor() {
 		super();
 		this.state = {
-			forecast: {},
+			forecast: [],
 			searchfield: ''
 		}
 	}
@@ -23,7 +23,8 @@ class App extends Component{
 	componentDidMount(){
 		fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`)
 			.then(response => response.json())
-			.then(data => this.setState({ forecast: data }));
+			.then(data => this.setState({ forecast: data.daily[0]}));
+			//this.setState({ forecast: data })
 	}
 
 	onSearchChange = (event) => {
@@ -37,7 +38,9 @@ class App extends Component{
 			<div>
 				<Header />
 				<LocationSearch searchChange = {this.onSearchChange}/>
-				<DayList forecast = {this.forecast}/>
+				<div>
+					{JSON.stringify(forecast)}
+				</div>
 			</div>
 		);
 	}
