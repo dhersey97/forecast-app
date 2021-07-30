@@ -1,0 +1,26 @@
+h1 {
+    font-size: 2rem;
+    padding: 0 .5vw;
+}
+
+.rainbow-m-around_large {
+    margin: 2vh 1vw;
+}
+
+.temp-container{
+    
+}
+
+.tempMin{
+    display: inline-block;
+    margin: 0 1vw;
+}
+
+.tempMax{
+    display: inline-block;
+    margin: 0 1vw;
+}
+
+.rainbow-flex_column{
+    text-align: center;
+}

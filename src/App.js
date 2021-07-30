@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Components/Header/Header';
 import LocationSearch from './Components/LocationSearch/LocationSearch';
 import DayList from './Components/DayList/DayList';
+import Forecast from './Components/Forecast/Forecast';
 import './App.css';
 
 const city = "boston";
@@ -14,17 +15,8 @@ class App extends Component{
 	constructor() {
 		super();
 		this.state = {
-			forecast: [],
 			searchfield: ''
 		}
-	}
-
-	//https://api.openweathermap.org/data/2.5/onecall?lat=42.3&lon=-71&appid=042dddf3fcb6c45c88287e33ed68f139
-	componentDidMount(){
-		fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`)
-			.then(response => response.json())
-			.then(data => this.setState({ forecast: data.daily[0]}));
-			//this.setState({ forecast: data })
 	}
 
 	onSearchChange = (event) => {
@@ -39,7 +31,10 @@ class App extends Component{
 				<Header />
 				<LocationSearch searchChange = {this.onSearchChange}/>
 				<div>
-					{JSON.stringify(forecast)}
+					<Forecast lat={lat} lon={lon}/>
+					<div>
+						<DayList />
+					</div>
 				</div>
 			</div>
 		);

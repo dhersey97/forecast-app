@@ -1,23 +1,12 @@
 import React from 'react';
 import DayCard from '../DayCard/DayCard';
+import './DayList.css';
 
-export const DayList = ({ forecast }) => {
+export const DayList = (props) => {
     return (
-        <div>
-            {
-                forecast.daily.map((x, i) => {
-                    return(
-                        <DayCard
-                            key = {i}
-                            icon = {forecast.daily[i].icon}
-                            main = {forecast.daily[i].weather[0].main}
-                            description = {forecast.daily[i].weather[0].description}
-                            tempMin = {forecast.daily[i].temp.min}
-                            tempMax = {forecast.daily[i].temp.max}
-                        />
-                    );
-                })
-            }
+        <div className="container">
+            <DayCard day={} dayTemp="297" tempMin="290" tempMax="299" main="Rain" desc="light rain" icon="10d"/>
+            
         </div>
     )
 }
