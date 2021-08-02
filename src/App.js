@@ -32,9 +32,6 @@ class App extends Component{
 				<LocationSearch searchChange = {this.onSearchChange}/>
 				<div>
 					<Forecast lat={lat} lon={lon}/>
-					<div>
-						<DayList />
-					</div>
 				</div>
 			</div>
 		);
