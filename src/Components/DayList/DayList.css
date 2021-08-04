@@ -1,7 +1,7 @@
 .container{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin: 2vh 5vw;
 }
 
 .Loader {

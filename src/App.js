@@ -27,7 +27,7 @@ class App extends Component{
 		const { forecast, searchfield } = this.state;
 		const locationName = searchfield.toLowerCase();
 		return (
-			<div>
+			<div className="centered">
 				<Header />
 				<LocationSearch searchChange = {this.onSearchChange}/>
 				<div>

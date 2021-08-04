@@ -7,13 +7,34 @@ import {
 //<DayCard day={} dayTemp="297" tempMin="290" tempMax="299" main="Rain" desc="light rain" icon="10d"/>
 const DayList = (props) => {
     if(props.loading == false){
-        console.log(props.responseObj.timezone);
-        return(
-            <h1>{props.responseObj.timezone}</h1>
-        )
+        //console.log(props.responseObj.daily[0]);
+        try{
+            return (
+                <div className="container">
+                    {
+                        props.responseObj.daily.slice(0, 5).map((x, i) => {
+                            return(
+                                <DayCard
+                                    day={i}
+                                    tempMin={props.responseObj.daily[i].temp.min}
+                                    dayTemp={props.responseObj.daily[i].temp.day}
+                                    tempMax={props.responseObj.daily[i].temp.max}
+                                    main={props.responseObj.daily[i].weather[0].main}
+                                    desc={props.responseObj.daily[i].weather[0].description}
+                                    icon={props.responseObj.daily[i].weather[0].icon}
+                                />
+                            );
+                        })
+                    }
+                </div>
+            );
+        } catch(e) {
+            console.log(e);
+            return null;
+        }
     } else{
         return (
-            <h1>{props.loading}</h1>
+            <div className={Loader}></div>
         )
     }
 
