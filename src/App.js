@@ -20,8 +20,8 @@ class App extends Component{
 	}
 
 	render(){
-		const { forecast, searchfield } = this.state;
-		const locationName = 'Seattle';//searchfield.toLowerCase()
+		const { searchfield } = this.state;
+		const locationName = searchfield.toLowerCase()
 		return (
 			<div className="centered">
 				<Header />

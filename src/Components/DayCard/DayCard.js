@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, ButtonIcon, Button } from 'react-rainbow-components';
+import { Card, ButtonIcon } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTasks, faShareAlt, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import './DayCard.css';
 
 const iconContainerStyles = {

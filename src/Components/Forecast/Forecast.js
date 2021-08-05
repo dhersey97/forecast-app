@@ -15,7 +15,6 @@ const Forecast = ({ location }) => {
 
     //https://open.mapquestapi.com/geocoding/v1/address?key=zeWCKE6hjSV1w8yfFvwdVF347A219A0G&location=Boston
     function getCoordinates(location){
-        console.log(location)
         fetch(`https://open.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAPQUEST_API_KEY}&location=${location}`)
             .then(response => response.json())
             .then(response => {
@@ -58,8 +57,6 @@ const Forecast = ({ location }) => {
             })
     }
 
-    console.log('loading', loading);
-    console.log(responseObj);
     return (
         <div>
             <Button onClick={() => getCoordinates(location)} label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />

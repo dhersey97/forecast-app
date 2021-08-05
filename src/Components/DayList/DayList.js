@@ -14,7 +14,7 @@ const DayList = (props) => {
                     <div className="centerTitle">
                         <br></br>
                         <h1>
-                            {props.city}
+                            {props.city.toUpperCase()}
                         </h1>
                     </div>
                     <div className="container">
@@ -37,7 +37,7 @@ const DayList = (props) => {
                 </>
             );
         } catch(e) {
-            console.log(e);
+            //console.log(e);
             return null;
         }
     } else{
