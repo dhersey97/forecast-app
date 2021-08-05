@@ -6,10 +6,6 @@ import DayList from './Components/DayList/DayList';
 import Forecast from './Components/Forecast/Forecast';
 import './App.css';
 
-const city = "boston";
-const lat = "42.3";
-const lon = "-71";
-
 class App extends Component{
 	
 	constructor() {
@@ -31,7 +27,7 @@ class App extends Component{
 				<Header />
 				<LocationSearch searchChange = {this.onSearchChange}/>
 				<div>
-					<Forecast lat={lat} lon={lon}/>
+					<Forecast location={locationName}/>
 				</div>
 			</div>
 		);
