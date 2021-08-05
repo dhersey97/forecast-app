@@ -25,8 +25,7 @@ const Forecast = ({ location }) => {
                 
                 lat = response.results[0].locations[0].latLng.lat;
                 lon = response.results[0].locations[0].latLng.lng;
-                console.log('lat', lat);
-                console.log('lon', lon);
+                setCity(location);
                 getForecast(lat, lon);
             })
             .catch(err => {
@@ -67,6 +66,7 @@ const Forecast = ({ location }) => {
             <DayList 
                 responseObj = {responseObj}
                 loading = {loading}
+                city = {city}
                 />
         </div>
     )

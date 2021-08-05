@@ -10,23 +10,31 @@ const DayList = (props) => {
         //console.log(props.responseObj.daily[0]);
         try{
             return (
-                <div className="container">
-                    {
-                        props.responseObj.daily.slice(0, 5).map((x, i) => {
-                            return(
-                                <DayCard
-                                    day={i}
-                                    tempMin={props.responseObj.daily[i].temp.min}
-                                    dayTemp={props.responseObj.daily[i].temp.day}
-                                    tempMax={props.responseObj.daily[i].temp.max}
-                                    main={props.responseObj.daily[i].weather[0].main}
-                                    desc={props.responseObj.daily[i].weather[0].description}
-                                    icon={props.responseObj.daily[i].weather[0].icon}
-                                />
-                            );
-                        })
-                    }
-                </div>
+                <>
+                    <div className="centerTitle">
+                        <br></br>
+                        <h1>
+                            {props.city}
+                        </h1>
+                    </div>
+                    <div className="container">
+                        {
+                            props.responseObj.daily.slice(0, 5).map((x, i) => {
+                                return(
+                                    <DayCard
+                                        day={i}
+                                        tempMin={props.responseObj.daily[i].temp.min}
+                                        dayTemp={props.responseObj.daily[i].temp.day}
+                                        tempMax={props.responseObj.daily[i].temp.max}
+                                        main={props.responseObj.daily[i].weather[0].main}
+                                        desc={props.responseObj.daily[i].weather[0].description}
+                                        icon={props.responseObj.daily[i].weather[0].icon}
+                                    />
+                                );
+                            })
+                        }
+                    </div>
+                </>
             );
         } catch(e) {
             console.log(e);
