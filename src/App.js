@@ -1,8 +1,6 @@
-import React, { Component, useEffect, useState} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import Header from './Components/Header/Header';
 import LocationSearch from './Components/LocationSearch/LocationSearch';
-import DayList from './Components/DayList/DayList';
 import Forecast from './Components/Forecast/Forecast';
 import './App.css';
 

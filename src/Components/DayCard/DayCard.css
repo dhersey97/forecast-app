@@ -3,6 +3,23 @@ h1 {
     padding: 0 .5vw;
 }
 
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.floatLeft{
+    float: left;
+    text-align: left;
+    margin-bottom: 1vh;
+}
+
+.floatRight{
+    float: right;
+    text-align: right;
+    margin-bottom: 1vh;
+}
+
 .rainbow-m-around_large {
     margin: 2vh 1vw;
     min-width: 15vw;

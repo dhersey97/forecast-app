@@ -40,7 +40,7 @@ const Forecast = ({ location }) => {
         setError(false);
         setLoading(true);
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
 			.then(response => response.json())
 			.then(response => {
                 if(response.ok){

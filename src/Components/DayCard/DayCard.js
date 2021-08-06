@@ -4,15 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import './DayCard.css';
 
-const iconContainerStyles = {
-    width: '2.5rem',
-    height: '2.5rem',
-};
-
-function kelvinToFahrenheit(tempK){
-    return Math.round((tempK - 273.15) * (9/5) + 32);
-}
-
 const currentDate = new Date();
 function calcDay(i){//i = how many days difference from the current day
     const today = currentDate.getDay() //Today is Wednesday, so today = 3
@@ -54,7 +45,20 @@ function calcDay(i){//i = how many days difference from the current day
     }
 }
 
-export const DayCard = ({ day, dayTemp, tempMin, tempMax, main, desc, icon }) => {
+function timestampToData(timestamp){
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours();
+    let minutes = "0" + date.getMinutes();
+    let seconds = "0" + date.getSeconds();
+
+    if(hours > 12){
+        hours = hours - 12;
+    }
+
+    return hours + ':' + minutes.substr(-2);
+}
+
+export const DayCard = ({ day, dayTemp, tempMin, tempMax, desc, icon, sunrise, sunset, humidity, wind_speed, moon_phase }) => {
 
     return (
         <div className="rainbow-m-around_large">
@@ -66,6 +70,24 @@ export const DayCard = ({ day, dayTemp, tempMin, tempMax, main, desc, icon }) =>
                             more 
                         </div>
                         <ButtonIcon icon={<FontAwesomeIcon icon={faAngleDown} />} />
+                        <div class="dropdown">
+                            <ul>
+                                <div className="floatLeft">
+                                    <li>Sunrise</li>
+                                    <li>Sunset</li>
+                                    <li>Humidity</li>
+                                    <li>Wind Speed</li>
+                                    <li>Moon Phase</li>
+                                </div>
+                                <div className="floatRight">
+                                    <li>{timestampToData(sunrise)}am</li>
+                                    <li>{timestampToData(sunset)}pm</li>
+                                    <li>{humidity}%</li>
+                                    <li>{wind_speed}mph</li>
+                                    <li>{moon_phase}</li>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 }
                 >
@@ -73,16 +95,16 @@ export const DayCard = ({ day, dayTemp, tempMin, tempMax, main, desc, icon }) =>
                     <div className="day-info-column">
                         <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon"/>
                         <h1 className="rainbow-p-top_large rainbow-font-size-heading_small">
-                            {kelvinToFahrenheit(dayTemp)}°
+                            {Math.round(dayTemp)}°
                         </h1>
                         {desc}
                     </div>
                     <div className="temp-container">
                         <div className="tempMin">
-                            Low: {kelvinToFahrenheit(tempMin)}   
+                            Low: {Math.round(tempMin)}°   
                         </div>
                         <div className="tempMax">
-                            High: {kelvinToFahrenheit(tempMax)} 
+                            High: {Math.round(tempMax)}° 
                         </div>
                     </div>
                 </div>
