@@ -57,16 +57,24 @@ const Forecast = ({ location }) => {
             })
     }
 
-    return (
-        <div>
-            <Button onClick={() => getCoordinates(location)} label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
-            <DayList 
-                responseObj = {responseObj}
-                loading = {loading}
-                city = {city}
-                />
-        </div>
-    )
+    if(loading === true){
+        return(
+            <div>
+                <Button isLoading label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
+            </div>
+        )
+    }else{
+        return (
+            <div>
+                <Button onClick={() => getCoordinates(location)} label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
+                <DayList 
+                    responseObj = {responseObj}
+                    loading = {loading}
+                    city = {city}
+                    />
+            </div>
+        )
+    }
 }
 
 export default Forecast;

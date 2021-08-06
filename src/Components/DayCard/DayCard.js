@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card, ButtonIcon } from 'react-rainbow-components';
+import React, { useState } from 'react';
+import { Card } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import './DayCard.css';
 
 const currentDate = new Date();
@@ -49,7 +49,6 @@ function timestampToData(timestamp){
     let date = new Date(timestamp * 1000);
     let hours = date.getHours();
     let minutes = "0" + date.getMinutes();
-    let seconds = "0" + date.getSeconds();
 
     if(hours > 12){
         hours = hours - 12;
@@ -58,7 +57,13 @@ function timestampToData(timestamp){
     return hours + ':' + minutes.substr(-2);
 }
 
-export const DayCard = ({ day, dayTemp, tempMin, tempMax, desc, icon, sunrise, sunset, humidity, wind_speed, moon_phase }) => {
+const DayCard = ({ day, dayTemp, tempMin, tempMax, desc, icon, sunrise, sunset, humidity, wind_speed, moon_phase }) => {
+
+    const [isActive, setActive] = useState(false);
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
 
     return (
         <div className="rainbow-m-around_large">
@@ -66,11 +71,13 @@ export const DayCard = ({ day, dayTemp, tempMin, tempMax, desc, icon, sunrise, s
                 title={calcDay(day)}
                 footer={
                     <div className="rainbow-align-content_space-between">
-                        <div className="rainbow-flex">
-                            more 
+                        <div className="pointer" onClick={toggleClass}>
+                            <div className="rainbow-flex">
+                                {isActive ? 'less' : 'more'} 
+                            </div>
+                            <FontAwesomeIcon icon={isActive ? faAngleUp : faAngleDown}/>
                         </div>
-                        <ButtonIcon icon={<FontAwesomeIcon icon={faAngleDown} />} />
-                        <div class="dropdown">
+                        <div className={isActive ? '' : 'none'}>
                             <ul>
                                 <div className="floatLeft">
                                     <li>Sunrise</li>

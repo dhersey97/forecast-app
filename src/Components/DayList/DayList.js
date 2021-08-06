@@ -22,6 +22,7 @@ const DayList = (props) => {
                             props.responseObj.daily.slice(0, 5).map((x, i) => {
                                 return(
                                     <DayCard
+                                        key = {i}
                                         day={i}
                                         tempMin={props.responseObj.daily[i].temp.min}
                                         dayTemp={props.responseObj.daily[i].temp.day}

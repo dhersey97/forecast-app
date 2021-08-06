@@ -3,6 +3,10 @@ html{
 	overflow: none;
 }
 
+.pointer{
+	cursor: pointer;
+}
+
 body{
 	font-family: 'Nunito', sans-serif;
 }

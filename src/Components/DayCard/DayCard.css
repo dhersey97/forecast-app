@@ -8,6 +8,10 @@ ul{
     padding: 0;
 }
 
+.none{
+    display: none;
+}
+
 .floatLeft{
     float: left;
     text-align: left;
@@ -24,6 +28,11 @@ ul{
     margin: 2vh 1vw;
     min-width: 15vw;
     min-height: 50vh;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
 }
 
 .temp-container{
