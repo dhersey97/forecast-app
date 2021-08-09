@@ -56,7 +56,7 @@ const Forecast = (props) => {
     if(loading === true){
         return(
             <div>
-                <Button isLoading label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
+                <Button isLoading id="loadingButton" label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
             </div>
         )
     }else{
