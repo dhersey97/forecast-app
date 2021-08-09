@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/forecast-app/static/css/main.2f275d6e.chunk.css",
+    "main.css": "/forecast-app/static/css/main.b91f4308.chunk.css",
     "main.js": "/forecast-app/static/js/main.ce662f22.chunk.js",
     "main.js.map": "/forecast-app/static/js/main.ce662f22.chunk.js.map",
     "runtime-main.js": "/forecast-app/static/js/runtime-main.894dff8d.js",
@@ -10,14 +10,14 @@
     "static/js/3.41e0a445.chunk.js": "/forecast-app/static/js/3.41e0a445.chunk.js",
     "static/js/3.41e0a445.chunk.js.map": "/forecast-app/static/js/3.41e0a445.chunk.js.map",
     "index.html": "/forecast-app/index.html",
-    "static/css/main.2f275d6e.chunk.css.map": "/forecast-app/static/css/main.2f275d6e.chunk.css.map",
+    "static/css/main.b91f4308.chunk.css.map": "/forecast-app/static/css/main.b91f4308.chunk.css.map",
     "static/js/2.033d774e.chunk.js.LICENSE.txt": "/forecast-app/static/js/2.033d774e.chunk.js.LICENSE.txt",
     "static/media/App.css": "/forecast-app/static/media/clouds-blue.fe6cd0d8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.894dff8d.js",
     "static/js/2.033d774e.chunk.js",
-    "static/css/main.2f275d6e.chunk.css",
+    "static/css/main.b91f4308.chunk.css",
     "static/js/main.ce662f22.chunk.js"
   ]
 }
