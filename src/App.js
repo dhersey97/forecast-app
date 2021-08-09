@@ -17,6 +17,10 @@ class App extends Component{
 		this.setState({ searchfield: event.target.value });
 	}
 
+	onClearSearch(){
+		this.setState({ searchfield: '' });
+	}
+
 	render(){
 		const { searchfield } = this.state;
 		const locationName = searchfield.toLowerCase()

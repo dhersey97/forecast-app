@@ -4,8 +4,8 @@ import './Header.css';
 export const Header = () => {
     return (
         <header>
-            <h1>MyWeatherApp</h1>
-            <h2>A simple app by Daniel Hersey</h2>
+            <h1>My Forecast App</h1>
+            <h2>A simple weather app by Daniel Hersey</h2>
         </header>
     )
 }

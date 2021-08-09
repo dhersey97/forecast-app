@@ -3,11 +3,10 @@ import { Button } from 'react-rainbow-components';
 import DayList from '../DayList/DayList';
 import './Forecast.css';
 
-const Forecast = ({ location }) => {
+const Forecast = (props) => {
 
     let [responseObj, setResponseObj] = useState({});
     let [loading, setLoading] = useState(false); 
-    let [error, setError] = useState(false);
     let [city, setCity] = useState('');
 
     let lat = 0;
@@ -28,7 +27,6 @@ const Forecast = ({ location }) => {
                 getForecast(lat, lon);
             })
             .catch(err => {
-                setError(true);
                 setLoading(false);
                 console.log(err.message);
             })
@@ -37,7 +35,6 @@ const Forecast = ({ location }) => {
     function getForecast(lat, lon) {
 
         setResponseObj({});
-        setError(false);
         setLoading(true);
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
@@ -51,7 +48,6 @@ const Forecast = ({ location }) => {
                 setLoading(false);
             })
             .catch(err => {
-                setError(true);
                 setLoading(false);
                 console.log(err.message);
             })
@@ -66,7 +62,7 @@ const Forecast = ({ location }) => {
     }else{
         return (
             <div>
-                <Button onClick={() => getCoordinates(location)} label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
+                <Button onClick={() => getCoordinates(props.location)} id="button" label="Search Location" variant="outline-brand" className="rainbow-m-around_medium" />
                 <DayList 
                     responseObj = {responseObj}
                     loading = {loading}

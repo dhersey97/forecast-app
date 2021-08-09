@@ -101,9 +101,9 @@ const DayCard = ({ day, dayTemp, tempMin, tempMax, desc, icon, sunrise, sunset, 
                 <div className="rainbow-p-around_xx-large rainbow-align-content_center rainbow-flex_column">
                     <div className="day-info-column">
                         <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon"/>
-                        <h1 className="rainbow-p-top_large rainbow-font-size-heading_small">
+                        <h3 className="rainbow-p-top_large rainbow-font-size-heading_small">
                             {Math.round(dayTemp)}°
-                        </h1>
+                        </h3>
                         {desc}
                     </div>
                     <div className="temp-container">
