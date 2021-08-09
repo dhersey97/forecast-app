@@ -44,9 +44,9 @@ li{
 
 .dmTruq{ /* Search bar Label */
 	font-style: italic;
-	font-size: 1rem;
+	font-size: 1rem !important;
 	font-weight: 300;
-	color: #e0e0e0;
+	color: #e0e0e0 !important;
 }
 
 .centered {
@@ -59,8 +59,8 @@ li{
 }
 
 #input-4{
-	background-color: rgba(255, 255, 255, .5);
-	backdrop-filter: blur(5px);
+	background-color: rgba(255, 255, 255, .5) !important;
+	backdrop-filter: blur(5px) !important;
 }
 
 #loadingButton{
@@ -73,9 +73,9 @@ li{
 	backdrop-filter: blur(5px);
 }
 
-.sc-btzYZH{
-	background-color: rgba(255, 255, 255, .5);
-	backdrop-filter: blur(5px);
+.sc-btzYZH.dBgyJd{
+	background-color: rgba(255, 255, 255, .5) !important; 
+	backdrop-filter: blur(5px) !important;
 }
 
 @media (max-height: 700px){
