@@ -1,13 +1,17 @@
+/*
+    DayList component for myForecastApp
+    uses data from forecast.js to display data using DayCard component
+*/
+
 import React from 'react';
 import DayCard from '../DayCard/DayCard';
 import {
     Loader
 } from './DayList.css';
 
-//<DayCard day={} dayTemp="297" tempMin="290" tempMax="299" main="Rain" desc="light rain" icon="10d"/>
+
 const DayList = (props) => {
     if(props.loading === false){
-        //console.log(props.responseObj.daily[0]);
         try{
             return (
                 <>

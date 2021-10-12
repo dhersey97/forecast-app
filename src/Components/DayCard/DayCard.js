@@ -6,7 +6,7 @@ import './DayCard.css';
 
 const currentDate = new Date();
 function calcDay(i){//i = how many days difference from the current day
-    const today = currentDate.getDay() //Today is Wednesday, so today = 3
+    const today = currentDate.getDay() 
     let targetDay = 0;
     if(i === 0){
         return 'Today';
